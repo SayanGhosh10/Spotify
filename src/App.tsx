@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   ActivityIndicator,
   SafeAreaView,
@@ -28,7 +28,7 @@ function App(): React.JSX.Element {
   useEffect(() => {
     setup();
   }, [])
-  
+
   if (!isPlayerReady) {
     <SafeAreaView>
       <ActivityIndicator />
@@ -44,8 +44,8 @@ function App(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  container : {
-    flex : 1,
+  container: {
+    flex: 1,
   }
 });
 

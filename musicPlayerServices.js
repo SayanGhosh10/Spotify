@@ -1,7 +1,7 @@
 import TrackPlayer, { Event, RepeatMode } from "react-native-track-player";
 import { playListData } from "./src/constants";
 
-export async function setupPlayer(){
+export async function setupPlayer() {
     let isSetup = false;
     try {
         await TrackPlayer.getProgress().then((progress) => progress.duration);
@@ -9,17 +9,17 @@ export async function setupPlayer(){
     } catch (error) {
         await TrackPlayer.setupPlayer();
         isSetup = true;
-    } finally{
+    } finally {
         return isSetup;
     }
 }
 
-export async function addTrack(){
+export async function addTrack() {
     await TrackPlayer.add(playListData);
     await TrackPlayer.setRepeatMode(RepeatMode.Queue);
 }
 
-export async function plabackService(){
+export async function plabackService() {
     TrackPlayer.addEventListener(Event.RemotePause, () => {
         TrackPlayer.pause();
     })
