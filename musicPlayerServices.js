@@ -4,7 +4,7 @@ import { playListData } from "./src/constants";
 export async function setupPlayer(){
     let isSetup = false;
     try {
-        await TrackPlayer.getCurrentTrack();
+        await TrackPlayer.getProgress().then((progress) => progress.duration);
         isSetup = true;
     } catch (error) {
         await TrackPlayer.setupPlayer();
